@@ -1,0 +1,254 @@
+{
+  "name": "Automated GitHub Certification Uploader",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "7c192d4b-43de-448a-a6e0-273a51c41c96",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "searchMethod": "query",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "mode": "list",
+            "value": "YOUR_GOOGLE_DRIVE_FOLDER_ID",
+            "cachedResultName": "AI Certifications To Upload"
+          },
+          "whatToSearch": "files",
+          "includeTrashed": false
+        },
+        "options": {
+          "fields": [
+            "id",
+            "name"
+          ]
+        }
+      },
+      "id": "87b4d452-76ac-466b-b28a-45eb86037c76",
+      "name": "List Drive folder files",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        224,
+        0
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "list",
+        "owner": {
+          "__rl": true,
+          "value": "ali-archives1",
+          "mode": "list",
+          "cachedResultName": "ali-archives1",
+          "cachedResultUrl": "https://github.com/ali-archives1"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "certification-auto-uploader",
+          "mode": "list",
+          "cachedResultName": "certification-auto-uploader",
+          "cachedResultUrl": "https://github.com/ali-archives1/certification-auto-uploader"
+        },
+        "filePath": "certificates"
+      },
+      "id": "5682a4b2-ae7d-4792-ae32-122a1fbbefee",
+      "name": "List existing GitHub files",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        448,
+        0
+      ],
+      "executeOnce": true,
+      "alwaysOutputData": true,
+      "credentials": {
+        "githubApi": {
+          "name": "GitHub account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Drive files from the folder listing\nconst driveFiles = $('List Drive folder files').all()\n  .map(i => i.json)\n  .filter(f => f && f.id && f.name);\n\n// Existing files already in the GitHub certificates/ folder.\n// GitHub list items carry a 'sha'; if the folder was missing the node's\n// error-passthrough output would carry Drive items instead (no sha) — exclude those.\nconst existingNames = new Set(\n  $('List existing GitHub files').all()\n    .filter(i => i.json && i.json.sha && i.json.name)\n    .map(i => i.json.name)\n);\n\n// Keep only Drive files not already present in the repo\nconst newFiles = driveFiles.filter(f => !existingNames.has(f.name));\n\nreturn newFiles.map(f => ({ json: { id: f.id, name: f.name } }));"
+      },
+      "id": "9183df29-9c28-47cf-95e9-62f3808933a2",
+      "name": "Filter new files",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        672,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {
+          "binaryPropertyName": "data",
+          "fileName": "={{ $json.name }}"
+        }
+      },
+      "id": "2e021224-e56f-493b-abf5-e30c8e6a275f",
+      "name": "Download file",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        896,
+        0
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Content-based duplicate protection.\n// Compute a SHA-256 of each file's actual binary content and keep only the\n// first item for each distinct hash. Crucially, we return the ORIGINAL item\n// objects so their binary (property \"data\") is preserved for the GitHub upload.\n// (The previous Crypto node computed the hash but dropped binary from its\n// output, which is why the upload failed with \"reading 'data'\".)\nconst crypto = require('crypto');\n\nconst seen = new Set();\nconst unique = [];\nconst items = $input.all();\n\nfor (let i = 0; i < items.length; i++) {\n  const item = items[i];\n  let hash = null;\n\n  if (item.binary && item.binary.data) {\n    const buffer = await this.helpers.getBinaryDataBuffer(i, 'data');\n    hash = crypto.createHash('sha256').update(buffer).digest('hex');\n  }\n\n  // Record the hash on json for visibility/debugging.\n  item.json.contentHash = hash;\n\n  if (hash) {\n    if (seen.has(hash)) {\n      continue; // duplicate content — skip\n    }\n    seen.add(hash);\n  }\n\n  unique.push(item);\n}\n\nreturn unique;"
+      },
+      "id": "6c579b5f-0070-4722-9805-a7d66c5afc98",
+      "name": "Dedupe by content hash",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "ali-archives1",
+          "mode": "list",
+          "cachedResultName": "ali-archives1",
+          "cachedResultUrl": "https://github.com/ali-archives1"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "certification-auto-uploader",
+          "mode": "list",
+          "cachedResultName": "certification-auto-uploader",
+          "cachedResultUrl": "https://github.com/ali-archives1/certification-auto-uploader"
+        },
+        "filePath": "=certificates/{{ $('Filter new files').item.json.name }}",
+        "binaryData": true,
+        "commitMessage": "=Add certification: {{ $('Filter new files').item.json.name }}"
+      },
+      "id": "30933ab2-8838-41ab-b5cb-19cd2329b3c2",
+      "name": "Upload to GitHub",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        1344,
+        0
+      ],
+      "credentials": {
+        "githubApi": {
+          "name": "GitHub account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "List Drive folder files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Drive folder files": {
+      "main": [
+        [
+          {
+            "node": "List existing GitHub files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List existing GitHub files": {
+      "main": [
+        [
+          {
+            "node": "Filter new files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter new files": {
+      "main": [
+        [
+          {
+            "node": "Download file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download file": {
+      "main": [
+        [
+          {
+            "node": "Dedupe by content hash",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dedupe by content hash": {
+      "main": [
+        [
+          {
+            "node": "Upload to GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "nodeGroups": [],
+  "tags": []
+}
