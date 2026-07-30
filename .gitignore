@@ -1,0 +1,29 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Build and test output
+build/
+dist/
+*.log
+*.tmp
+*.spec.bak
+projects/rag-study-assistant/test_data/*.pdf
+projects/rag-study-assistant/test_data/*.json
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Private document staging
+private_documents/
+uploaded_pdfs/
+
+# Keep only the intentionally published Windows release binary.
+projects/rag-study-assistant/release/*
+!projects/rag-study-assistant/release/RAG Study Assistant.exe

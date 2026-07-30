@@ -1,0 +1,29 @@
+RAG STUDY ASSISTANT — WINDOWS
+================================
+
+Launch
+------
+1. Open the Ollama application and wait for it to finish starting.
+2. Double-click:
+   release\RAG Study Assistant.exe
+3. Drop a PDF onto the app, or select "Select PDF".
+4. Ask questions in the chat box. Press Enter to send or Shift+Enter for a new line.
+
+The app does not need a terminal or browser during normal use.
+
+Required local models
+---------------------
+- llama3.2:3b
+- nomic-embed-text:latest
+
+Both models were present when this build was tested. If the app reports a missing
+model later, install that model in Ollama and select "Check status" in the app.
+
+Notes
+-----
+- Text-based PDFs work directly.
+- Scanned PDFs need OCR before the app can read them.
+- "Clear chat" removes conversation memory but keeps the current PDF loaded.
+- "Change PDF" selects and indexes a different document.
+- All model requests use the local Ollama service at 127.0.0.1.
+- A locally rebuilt executable is written to dist\RAG Study Assistant.exe.
