@@ -1,9 +1,33 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.kdbx
+credentials*.json
+secrets*.json
+*token*.json
+id_rsa*
+id_ed25519*
+
+# Private or local-only material
+private/
+personal/
+private_documents/
+uploaded_pdfs/
+*.private.md
+*.local.md
+
 # Python environments and caches
 .venv/
 venv/
 env/
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
 # Build and test output
 build/
@@ -19,10 +43,6 @@ projects/rag-study-assistant/test_data/*.json
 .idea/
 .DS_Store
 Thumbs.db
-
-# Private document staging
-private_documents/
-uploaded_pdfs/
 
 # Keep only the intentionally published Windows release binary.
 projects/rag-study-assistant/release/*

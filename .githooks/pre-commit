@@ -1,0 +1,6 @@
+#!/bin/sh
+repo_root="$(git rev-parse --show-toplevel)" || exit 1
+if command -v cygpath >/dev/null 2>&1; then
+  repo_root="$(cygpath -w "$repo_root")"
+fi
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root\scripts\pre-commit-check.ps1"
