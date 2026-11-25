@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "packaged_binary_built": true,
   "packaged_signature_status": "NotSigned",
   "packaged_smoke_test": "blocked_before_start",
@@ -13,7 +13,9 @@
   "source_backend_record": "source-backend-check.json",
   "source_ui_record": "source-ui-e2e.json",
   "source_export_record": "fresh-export-check.json",
-  "github_publication": "pending",
-  "clean_git_clone_verification": "pending",
+  "github_publication": "verified",
+  "published_implementation_commit": "ee7a46b806c5013d34302ce79cecb8e3fd49a7ba",
+  "clean_git_clone_verification": "passed: 47 tests, source UI startup, manual hash, six screenshots, README links",
+  "clean_git_clone_record": "clean-clone-check.json",
   "learner_reflection_demo_defense": "pending"
 }

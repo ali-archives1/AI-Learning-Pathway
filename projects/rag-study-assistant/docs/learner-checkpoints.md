@@ -19,7 +19,10 @@ Ali provided this implementation outline before the extension was written: chunk
 
 - Personal reflection and independent code explanation.
 - A short learner-recorded demo.
-- GitHub publication and a reproducible clean-clone check after publication.
 - Overall Module 5 scoring across implementation, testing, documentation, and independence.
 
 The assistant must not mark these completed automatically. The software and retained test evidence support the review; they do not replace it.
+
+## Publication verified — 2026-11-25
+
+The implementation and all six screenshots were pushed to the existing GitHub repository. A fresh clone with a new dependency environment passed 47 tests, source-UI startup, manual download/hash, screenshot validity, and documentation-link checks. See verification/clean-clone-check.json. This verifies software reproducibility, not learner independence.

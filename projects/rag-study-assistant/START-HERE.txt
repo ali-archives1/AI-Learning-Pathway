@@ -23,5 +23,7 @@ The source application was tested successfully; packaged execution is unverified
 No Windows security setting was changed.
 
 The software build and development benchmark are ready for learner review.
-Ali's own reflection, demo, explanation, GitHub publication, and clean-clone
-verification remain pending. This is not a completed Module 5 mastery assessment.
+The source and six screenshots were published to GitHub on November 25, 2026.
+A fresh clone passed 47 tests and source UI startup; see docs/verification.
+Ali's own reflection, demo, and explanation remain pending.
+This is not a completed Module 5 mastery assessment.

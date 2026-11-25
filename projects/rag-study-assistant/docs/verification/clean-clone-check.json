@@ -1,0 +1,76 @@
+{
+  "client_date": "2026-11-25",
+  "checked_at_utc": "2026-11-25T16:50:12.369383+00:00",
+  "repository": "https://github.com/ali-archives1/AI-Learning-Pathway",
+  "branch": "main",
+  "verified_commit": "ee7a46b806c5013d34302ce79cecb8e3fd49a7ba",
+  "source": "Fresh depth-one clone downloaded from GitHub, with a newly created Python environment installed from requirements.txt",
+  "python": "3.12.14",
+  "packages": {
+    "PySide6": "6.10.1",
+    "numpy": "2.3.5",
+    "pypdf": "6.10.0",
+    "reportlab": "4.4.9",
+    "PyInstaller": "6.18.0"
+  },
+  "clean_tracked_worktree_before_checks": true,
+  "public_manual_download_exit_code": 0,
+  "public_manual_hash_matches": true,
+  "unit_test_exit_code": 0,
+  "test_count": 47,
+  "source_ui_smoke_exit_code": 0,
+  "relative_markdown_links_checked": 25,
+  "missing_markdown_targets": [],
+  "screenshots": [
+    {
+      "file": "projects/rag-study-assistant/docs/screenshots/answer-evidence.png",
+      "dimensions": [
+        1440,
+        940
+      ],
+      "sha256": "614eb36c6428152e1748d5807526b1f76a93a1e57f0d2e2ca8516d3ba250df6e"
+    },
+    {
+      "file": "projects/rag-study-assistant/docs/screenshots/citation-pdf-page.png",
+      "dimensions": [
+        1440,
+        940
+      ],
+      "sha256": "eb2c8da896ef0a3bdccf4e88930cf8038b8b6174be82f773a81151d36f6c9d15"
+    },
+    {
+      "file": "projects/rag-study-assistant/docs/screenshots/compact-layout.png",
+      "dimensions": [
+        1100,
+        760
+      ],
+      "sha256": "279da62d13d174cb33ebfabbab991b19a22139c1771ef60c44b5c85432f43ed1"
+    },
+    {
+      "file": "projects/rag-study-assistant/docs/screenshots/evaluation.png",
+      "dimensions": [
+        1440,
+        940
+      ],
+      "sha256": "9571f3c1906e180d3a99d7ed26facd40db365f58263f68095bac5a098fbcabc8"
+    },
+    {
+      "file": "projects/rag-study-assistant/docs/screenshots/evidence-before-answer.png",
+      "dimensions": [
+        1440,
+        940
+      ],
+      "sha256": "9ae7ae1c3c3287542846773ccb7a1626d98eb3598ca02d520f3904a430894016"
+    },
+    {
+      "file": "projects/rag-study-assistant/docs/screenshots/not-found.png",
+      "dimensions": [
+        1440,
+        940
+      ],
+      "sha256": "97ea3865c24b87f37dc14bdb7a2d918510be1382a5ebfbb1ba4f1ee0c3df846d"
+    }
+  ],
+  "scope": "Fresh-clone deterministic tests, source UI startup, official PDF download/hash, screenshot validity and local README links. Existing real-model benchmark is preserved, not rerun or claimed as new.",
+  "passed": true
+}

@@ -20,6 +20,8 @@ On Ali's computer, use the prepared source launcher. Windows Application Control
 
 [View the compact desktop layout](docs/screenshots/compact-layout.png).
 
+Published to GitHub and checked from a fresh clone on 2026-11-25: all 47 tests passed, the source UI started, the official manual downloaded with its expected hash, and all six screenshots and local README links were verified. See [the clean-clone record](docs/verification/clean-clone-check.json).
+
 ## Problem and purpose
 
 Engineering manuals mix specifications, tables, diagrams, notes, and sometimes contradictory or missing values. A useful document assistant needs visible evidence and measurable retrieval quality. Fluent prose alone cannot establish that a specification is supported.
