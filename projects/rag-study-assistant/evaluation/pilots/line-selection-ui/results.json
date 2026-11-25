@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "manual_indexed": true,
+    "pdf_viewer_loaded": true,
+    "evidence_before_generation": true,
+    "supported_answer": false,
+    "valid_page_citation": false,
+    "clickable_citation_opens_pdf": false,
+    "unanswerable_refusal": false,
+    "missing_file_error_preserves_index": true,
+    "evaluation_navigation": true
+  },
+  "passed": false,
+  "source": "Actual Qt interactions and local-model calls, not seeded answers",
+  "answer": "10 D9 Digital/GPIO Digital pin 9/GPIO 11 SS Digital SPI Chip Select 12 MOSI Digital SPI1 Main Out Secondary In",
+  "answer_pages": [
+    10
+  ],
+  "missing_reason": "verified_quotations"
+}

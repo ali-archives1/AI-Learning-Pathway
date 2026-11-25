@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-24",
+  "packaged_binary_built": true,
+  "packaged_signature_status": "NotSigned",
+  "packaged_smoke_test": "blocked_before_start",
+  "packaged_backend_test": "blocked_before_start",
+  "windows_error": "An Application Control policy has blocked this file.",
+  "packaged_execution_verified": false,
+  "security_settings_changed": false,
+  "delivery_route": "Prepared source installation with pinned Python dependencies",
+  "local_launcher_verified": true,
+  "local_launcher_record": "local-launcher-check.json",
+  "source_backend_record": "source-backend-check.json",
+  "source_ui_record": "source-ui-e2e.json",
+  "source_export_record": "fresh-export-check.json",
+  "github_publication": "pending",
+  "clean_git_clone_verification": "pending",
+  "learner_reflection_demo_defense": "pending"
+}

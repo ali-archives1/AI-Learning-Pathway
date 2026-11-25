@@ -281,13 +281,13 @@ CURRENT QUESTION:
             )
         )
 
-        if not found or not answer or answer == NOT_FOUND_RESPONSE:
+        if not found or not answer or answer == NOT_FOUND_RESPONSE or not source_pages:
             found = False
             answer = NOT_FOUND_RESPONSE
             source_pages = ()
-        elif not source_pages:
-            # A grounded response must always expose at least one retrieved page.
-            source_pages = (retrieved[0].page,)
+        # Never invent a citation when the model supplies no valid source page.
+        # A retrieved page number is necessary, but does not by itself prove
+        # that the answer's claims are supported; evaluation must check that.
 
         result = AnswerResult(
             question=clean_question,

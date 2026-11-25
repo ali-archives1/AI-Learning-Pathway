@@ -1,0 +1,38 @@
+{
+  "source_id": "arduino-uno-r3-manual-20261119",
+  "title": "Arduino UNO R3 User Manual",
+  "publisher": "Arduino S.r.l.",
+  "product": "A000066",
+  "official_url": "https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf",
+  "download_date": "2026-11-24",
+  "document_modified_date": "2026-11-19",
+  "revision": "5 (2026-11-12), according to revision history",
+  "sha256": "6bfbbc1b50da5ed84e7311b9639e62cc456e93e70a55d9c2e1eb9b7355212f21",
+  "page_count": 14,
+  "usage_basis": "Public manufacturer manual downloaded from Arduino's official documentation for attributed educational retrieval. Arduino publishes website editorial content under CC BY-SA 4.0. Source PDF is downloaded locally rather than committed; do not assume all third-party marks and artwork are separately licensed.",
+  "permission_reference": "https://www.arduino.cc/en/trademark",
+  "documentation_license_reference": "https://github.com/arduino/docs-content/blob/main/CONTRIBUTING.md",
+  "source_content_license": "CC BY-SA 4.0, subject to Arduino's stated editorial-content policy and third-party exclusions",
+  "sections": {
+    "1": "Description and intended use",
+    "2": "Features: ATmega328P and ATmega16U2",
+    "3": "Table of contents",
+    "4": "1 The board: application examples and related products",
+    "5": "2 Ratings: operating conditions and power consumption",
+    "6": "3.1 Board topology: component reference table",
+    "7": "3.2 Processor and 3.3 Power tree",
+    "8": "4 Board operation: IDE, Cloud Editor, sample sketches",
+    "9": "5 Connector pinouts: diagram",
+    "10": "5.1 JANALOG and 5.2 JDIGITAL pin tables",
+    "11": "5.3 Mechanical information: board outline",
+    "12": "6 Certifications: CE, RoHS and REACH",
+    "13": "6.3 Conflict minerals and 7 FCC caution",
+    "14": "Company information, reference links and revision history"
+  },
+  "known_source_limitations": [
+    "Page 2 lists AVR CPU up to 16 MHz; page 7 says the main processor runs up to 20 MHz. Do not silently resolve this contradiction using outside knowledge.",
+    "Page 5 lists maximum power consumption as xx mA, not a usable numeric specification.",
+    "Diagrams are not interpreted: only extractable text is indexed.",
+    "This is a software retrieval demonstration, not hardware design approval."
+  ]
+}

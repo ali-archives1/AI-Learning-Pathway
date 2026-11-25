@@ -1,0 +1,27 @@
+ENGINEERING MANUAL Q&A
+
+On Ali's computer, open the "Open Engineering Manual QA.cmd" launcher
+beside the delivered source folder. It uses the prepared installation at:
+%USERPROFILE%\OneDrive\RAG-Study-Assistant\Engineering-Manual-QA
+
+Keep Ollama running. The local models are nomic-embed-text and llama3.2:3b.
+
+1. Choose Open Arduino example and wait for indexing.
+2. Ask: How many digital input/output pins does the UNO R3 have?
+3. Choose Find evidence. Read the passages before choosing Answer from these sources.
+4. Click the Page citation to inspect the actual manual.
+5. Ask: How much does the board weigh in grams?
+   The example manual does not state it; the expected response is not found.
+6. Open Evaluation to review the saved two-setting comparison.
+
+This source export is portable after the README setup steps. It does not contain
+a Python environment or the local model weights. Its launch-manual.cmd works
+after creating .venv and installing requirements.txt.
+
+Windows Application Control blocked the new unsigned executable on this computer.
+The source application was tested successfully; packaged execution is unverified.
+No Windows security setting was changed.
+
+The software build and development benchmark are ready for learner review.
+Ali's own reflection, demo, explanation, GitHub publication, and clean-clone
+verification remain pending. This is not a completed Module 5 mastery assessment.

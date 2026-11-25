@@ -1,0 +1,12 @@
+# Public manual is obtained with scripts/download_manual.py and hash checked.
+data/manuals/*.pdf
+evaluation/runs/
+evaluation/latest.json
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+build/
+dist/

@@ -2,13 +2,13 @@
 
 ## Featured Projects
 
-### [RAG Study Assistant](projects/rag-study-assistant/)
+### [Engineering Manual Q&A and RAG Study Assistant](projects/rag-study-assistant/)
 
-A private, local Windows desktop application that lets users upload PDFs and receive grounded answers through local Ollama models, semantic retrieval, source-page citations, retrieved-evidence inspection, and conversation memory.
+A local Windows engineering-manual assistant with evidence inspection before answering, source-checked quotations, clickable PDF citations, and a versioned comparison of two chunking strategies over 25 evaluation questions. The original RAG Study Assistant is preserved. Learner review, personal reflection, demo, and project defense remain in progress.
 
 **Tools:** Python, PySide6, Ollama, PyPDF, NumPy, local embeddings, local language models, background workers, and PyInstaller
 
-![RAG Study Assistant desktop interface](projects/rag-study-assistant/assets/app-overview.png)
+![Engineering Manual Q&A desktop interface](projects/rag-study-assistant/docs/screenshots/answer-evidence.png)
 
 ### [Automated GitHub Certification Uploader](projects/automated-github-certification-uploader/)
 

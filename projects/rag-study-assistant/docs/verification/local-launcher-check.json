@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-24T14:52:41.1215325-05:00",
+  "launcher": "Open Engineering Manual QA.cmd",
+  "installation": "OneDrive/RAG-Study-Assistant/Engineering-Manual-QA",
+  "command_exit_code": 0,
+  "checks": {
+    "models_ready": true,
+    "public_manual_indexed": true,
+    "qt_pdf_viewer_resource": true,
+    "supported_answer": true,
+    "missing_answer_refused": true
+  },
+  "passed": true,
+  "mode": "Delivered launcher using the prepared source installation, actual local-model calls, and Qt offscreen rendering",
+  "process_observation_pilot": "Earlier process-only observation was inconclusive because Start-Process -Wait had already waited for descendants to close; retained in task work."
+}

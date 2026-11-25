@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "manual_indexed": true,
+    "pdf_viewer_loaded": true,
+    "evidence_before_generation": true,
+    "supported_answer": true,
+    "valid_page_citation": true,
+    "clickable_citation_opens_pdf": true,
+    "unanswerable_refusal": true,
+    "missing_file_error_preserves_index": true,
+    "evaluation_navigation": true,
+    "completed_evaluation_loaded": true
+  },
+  "passed": true,
+  "source": "Actual Qt interactions and local-model calls, not seeded answers",
+  "answer": "14 digital input/output pins",
+  "answer_pages": [
+    4
+  ],
+  "missing_reason": "not_found"
+}

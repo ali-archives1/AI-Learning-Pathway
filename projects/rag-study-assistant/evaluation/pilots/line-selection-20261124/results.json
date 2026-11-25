@@ -1,0 +1,413 @@
+{
+  "started_at": "2026-11-24T19:25:26.301897+00:00",
+  "questions_sha256": "dedc10c7bfd4d5196fb251a4aa98dd714a4dbb53031cdd640ed9b0e0b4fd157a",
+  "source_sha256": "6bfbbc1b50da5ed84e7311b9639e62cc456e93e70a55d9c2e1eb9b7355212f21",
+  "models": [
+    {
+      "name": "llama3.2:3b",
+      "digest": "a80c4f17acd55265feec403c7aef86be0c25983ab279d83f3bcd3abbcb5b8b72",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "llama",
+        "families": [
+          "llama"
+        ],
+        "parameter_size": "3.2B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 131072,
+        "embedding_length": 3072,
+        "runner": "ggml"
+      }
+    },
+    {
+      "name": "nomic-embed-text:latest",
+      "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "nomic-bert",
+        "families": [
+          "nomic-bert"
+        ],
+        "parameter_size": "137M",
+        "quantization_level": "F16",
+        "context_length": 2048,
+        "embedding_length": 768,
+        "runner": "ggml"
+      }
+    }
+  ],
+  "settings": {
+    "top_k": 5,
+    "temperature": 0,
+    "seed": 7,
+    "num_ctx": 8192,
+    "num_predict": 160,
+    "selection_protocol": "numbered source-line ranges v2",
+    "embedding_prefixes": {
+      "documents": "search_document:",
+      "queries": "search_query:"
+    },
+    "answer_mode": "verified extractive quotations; no generated factual paraphrase"
+  },
+  "variants": [
+    {
+      "label": "900 chars / 150 overlap",
+      "source": {
+        "file_name": "arduino-uno-r3.pdf",
+        "page_count": 14,
+        "text_page_count": 14,
+        "chunk_count": 24,
+        "source_id": "arduino-uno-r3-manual-20261119",
+        "title": "Arduino UNO R3 User Manual",
+        "publisher": "Arduino S.r.l.",
+        "sha256": "6bfbbc1b50da5ed84e7311b9639e62cc456e93e70a55d9c2e1eb9b7355212f21",
+        "chunk_size": 900,
+        "overlap": 150
+      },
+      "cases": [
+        {
+          "id": "A01",
+          "question": "Which main microcontroller is the Arduino UNO R3 equipped with?",
+          "answerable": true,
+          "retrieval_hit_at_1": false,
+          "retrieval_hit_at_5": true,
+          "retrieved_pages": [
+            2,
+            4,
+            7,
+            1,
+            6
+          ],
+          "retrieval_seconds": 0.061713900009635836,
+          "answer": {
+            "question": "Which main microcontroller is the Arduino UNO R3 equipped with?",
+            "answer": "headers, however some are reserved for internal communication with the USB Bridge coprocessor. 3.3 Power Tree",
+            "found": true,
+            "citations": [
+              {
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "chunk_id": "6bfbbc1b50da-p7-c9-900",
+                "page": 7,
+                "section": "3.2 Processor and 3.3 Power tree",
+                "quote": "headers, however some are reserved for internal communication with the USB Bridge coprocessor. 3.3 Power Tree"
+              }
+            ],
+            "chunks": [
+              {
+                "index": 3,
+                "page": 2,
+                "text": "Features\nATMega328P Processor\nMemory\nAVR CPU at up to 16 MHz\n32 kB Flash\n2 kB SRAM\n1 kB EEPROM\nSecurity\nPower On Reset (POR)\nBrown Out Detection (BOD)\nPeripherals\n2x 8-bit Timer/Counter with a dedicated period register and compare channels\n1x 16-bit Timer/Counter with a dedicated period register, input capture and compare channels\n1x USART with fractional baud rate generator and start-of-frame detection\n1x controller/peripheral Serial Peripheral Interface (SPI)\n1x Dual mode controller/peripheral I2C\n1x Analog Comparator (AC) with a scalable reference input\nWatchdog Timer with separate on-chip oscillator\nSix PWM channels\nInterrupt and wake-up on pin change\nATMega16U2 Processor\n8-bit AVR® RISC-based microcontroller\nMemory\n16 kB ISP Flash\n512B EEPROM\n512B SRAM\ndebugWIRE interface for on-chip debugging and programming\nPower\n2.7-5.5 volts\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p2-c3-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "Features: ATmega328P and ATmega16U2",
+                "score": 0.8102750778198242
+              },
+              {
+                "index": 5,
+                "page": 4,
+                "text": "1 The Board\n1.1 Application Examples\nThe UNO board is the flagship product of Arduino. Regardless if you are new to the world of electronics or will use\nthe UNO R3 as a tool for education purposes or industry-related tasks, the UNO R3 is likely to meet your needs.\nFirst entry to electronics: If this is your first project within coding and electronics, get started with our most used\nand documented board; UNO. It is equipped with the well-known ATmega328P processor, 14 digital input/output\npins, 6 analog inputs, USB connections, ICSP header and reset button. This board includes everything you will need\nfor a great first experience with Arduino.\nIndustry-standard development board: Using the UNO R3 board in industries, there are a range of companies\nusing the UNO R3 board as the brain for their PLC’s.\nEducation purposes: Although the UNO R3 board has been with us for about ten years, it is",
+                "chunk_id": "6bfbbc1b50da-p4-c5-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "1 The board: application examples and related products",
+                "score": 0.8006585836410522
+              },
+              {
+                "index": 9,
+                "page": 7,
+                "text": "3.2 Processor\nThe Main Processor is a ATmega328P running at up to 20 MHz. Most of its pins are connected to the external\nheaders, however some are reserved for internal communication with the USB Bridge coprocessor.\n3.3 Power Tree\nPower tree\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p7-c9-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "3.2 Processor and 3.3 Power tree",
+                "score": 0.7971270084381104
+              },
+              {
+                "index": 1,
+                "page": 1,
+                "text": "User Manual\nSKU: A000066\nEnglish\nDescription\nThe Arduino® UNO R3 is the perfect board to get familiar with electronics and coding. This versatile development\nboard is equipped with the well-known ATmega328P and the ATMega 16U2 Processor.\nThis board will give you a great first experience within the world of Arduino.\nTarget areas:\nMaker, introduction, industries\nProduct Intended Use\nArduino Hardware Products are primarily intended for development and prototyping but may also support\nproduction solutions. Developers must design and verify security controls early, based on the intended deployment\nenvironment. Security is a shared responsibility between Arduino and the solution builder, who must assess the\nhardware’s available security features and add any necessary protections.\nVisit docs.arduino.cc/tutorials/security/intended-use-and-security-model/ for the complete Arduino",
+                "chunk_id": "6bfbbc1b50da-p1-c1-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "Description and intended use",
+                "score": 0.7928067445755005
+              },
+              {
+                "index": 8,
+                "page": 6,
+                "text": "Board topology\nRef. Description Ref. Description\nX1 Power jack 2.1x5.5mm U1 SPX1117M3-L-5 Regulator\nX2 USB B Connector U3 ATMEGA16U2 Module\nPC1 EEE-1EA470WP 25V SMD CapacitorU5 LMV358LIST-A.9 IC\nPC2 EEE-1EA470WP 25V SMD CapacitorF1 Chip Capacitor, High Density\nD1 CGRA4007-G Rectifier ICSP Pin header connector (through hole 6)\nJ-ZU4 ATMEGA328P Module ICSP1 Pin header connector (through hole 6)\nY1 ECS-160-20-4X-DU Oscillator\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p6-c8-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "3.1 Board topology: component reference table",
+                "score": 0.7628078460693359
+              }
+            ],
+            "reason": "verified_quotations",
+            "generation_seconds": 32.761026099993614,
+            "raw_model_response": "{\"found\": true, \"selections\": [{\"passage\":\"P3\", \"first_line\":3, \"last_line\":4}]}"
+          },
+          "quotation_supported": true,
+          "expected_answer_pass": false
+        },
+        {
+          "id": "A02",
+          "question": "How many digital input/output pins does the UNO R3 have?",
+          "answerable": true,
+          "retrieval_hit_at_1": true,
+          "retrieval_hit_at_5": true,
+          "retrieved_pages": [
+            4,
+            10,
+            2,
+            6,
+            9
+          ],
+          "retrieval_seconds": 0.07737439998891205,
+          "answer": {
+            "question": "How many digital input/output pins does the UNO R3 have?",
+            "answer": "10 D9 Digital/GPIO Digital pin 9/GPIO 11 SS Digital SPI Chip Select 12 MOSI Digital SPI1 Main Out Secondary In",
+            "found": true,
+            "citations": [
+              {
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "chunk_id": "6bfbbc1b50da-p10-c14-900",
+                "page": 10,
+                "section": "5.1 JANALOG and 5.2 JDIGITAL pin tables",
+                "quote": "10 D9 Digital/GPIO Digital pin 9/GPIO 11 SS Digital SPI Chip Select 12 MOSI Digital SPI1 Main Out Secondary In"
+              }
+            ],
+            "chunks": [
+              {
+                "index": 5,
+                "page": 4,
+                "text": "1 The Board\n1.1 Application Examples\nThe UNO board is the flagship product of Arduino. Regardless if you are new to the world of electronics or will use\nthe UNO R3 as a tool for education purposes or industry-related tasks, the UNO R3 is likely to meet your needs.\nFirst entry to electronics: If this is your first project within coding and electronics, get started with our most used\nand documented board; UNO. It is equipped with the well-known ATmega328P processor, 14 digital input/output\npins, 6 analog inputs, USB connections, ICSP header and reset button. This board includes everything you will need\nfor a great first experience with Arduino.\nIndustry-standard development board: Using the UNO R3 board in industries, there are a range of companies\nusing the UNO R3 board as the brain for their PLC’s.\nEducation purposes: Although the UNO R3 board has been with us for about ten years, it is",
+                "chunk_id": "6bfbbc1b50da-p4-c5-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "1 The board: application examples and related products",
+                "score": 0.7908399105072021
+              },
+              {
+                "index": 14,
+                "page": 10,
+                "text": "pin 4/GPIO\n6 D5 Digital/GPIO Digital pin 5/GPIO\n7 D6 Digital/GPIO Digital pin 6/GPIO\n8 D7 Digital/GPIO Digital pin 7/GPIO\n9 D8 Digital/GPIO Digital pin 8/GPIO\n10 D9 Digital/GPIO Digital pin 9/GPIO\n11 SS Digital SPI Chip Select\n12 MOSI Digital SPI1 Main Out Secondary In\n13 MISO Digital SPI Main In Secondary Out\n14 SCK Digital SPI serial clock output\n15 GND Power Ground\n16 AREF Digital Analog reference voltage\n17 A4/SD4 Digital Analog input 4/I2C Data line (duplicated)\n18 A5/SD5 Digital Analog input 5/I2C Clock line (duplicated)\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p10-c14-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "5.1 JANALOG and 5.2 JDIGITAL pin tables",
+                "score": 0.7877503037452698
+              },
+              {
+                "index": 3,
+                "page": 2,
+                "text": "Features\nATMega328P Processor\nMemory\nAVR CPU at up to 16 MHz\n32 kB Flash\n2 kB SRAM\n1 kB EEPROM\nSecurity\nPower On Reset (POR)\nBrown Out Detection (BOD)\nPeripherals\n2x 8-bit Timer/Counter with a dedicated period register and compare channels\n1x 16-bit Timer/Counter with a dedicated period register, input capture and compare channels\n1x USART with fractional baud rate generator and start-of-frame detection\n1x controller/peripheral Serial Peripheral Interface (SPI)\n1x Dual mode controller/peripheral I2C\n1x Analog Comparator (AC) with a scalable reference input\nWatchdog Timer with separate on-chip oscillator\nSix PWM channels\nInterrupt and wake-up on pin change\nATMega16U2 Processor\n8-bit AVR® RISC-based microcontroller\nMemory\n16 kB ISP Flash\n512B EEPROM\n512B SRAM\ndebugWIRE interface for on-chip debugging and programming\nPower\n2.7-5.5 volts\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p2-c3-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "Features: ATmega328P and ATmega16U2",
+                "score": 0.7753732204437256
+              },
+              {
+                "index": 8,
+                "page": 6,
+                "text": "Board topology\nRef. Description Ref. Description\nX1 Power jack 2.1x5.5mm U1 SPX1117M3-L-5 Regulator\nX2 USB B Connector U3 ATMEGA16U2 Module\nPC1 EEE-1EA470WP 25V SMD CapacitorU5 LMV358LIST-A.9 IC\nPC2 EEE-1EA470WP 25V SMD CapacitorF1 Chip Capacitor, High Density\nD1 CGRA4007-G Rectifier ICSP Pin header connector (through hole 6)\nJ-ZU4 ATMEGA328P Module ICSP1 Pin header connector (through hole 6)\nY1 ECS-160-20-4X-DU Oscillator\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p6-c8-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "3.1 Board topology: component reference table",
+                "score": 0.7610166668891907
+              },
+              {
+                "index": 12,
+                "page": 9,
+                "text": "5 Connector Pinouts\nPinout\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p9-c12-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "5 Connector pinouts: diagram",
+                "score": 0.7505137324333191
+              }
+            ],
+            "reason": "verified_quotations",
+            "generation_seconds": 31.337060999998357,
+            "raw_model_response": "{\"found\": true, \"selections\": [{\"passage\": \"P2\", \"first_line\": 6, \"last_line\": 8}]}"
+          },
+          "quotation_supported": true,
+          "expected_answer_pass": false
+        },
+        {
+          "id": "A03",
+          "question": "How many analog inputs are listed for the UNO R3 board?",
+          "answerable": true,
+          "retrieval_hit_at_1": true,
+          "retrieval_hit_at_5": true,
+          "retrieved_pages": [
+            4,
+            2,
+            6,
+            10,
+            4
+          ],
+          "retrieval_seconds": 2.033619100024225,
+          "answer": {
+            "question": "How many analog inputs are listed for the UNO R3 board?",
+            "answer": "pins, 6 analog inputs, USB connections, ICSP header and reset button. This board includes everything you will need for a great first experience with Arduino.",
+            "found": true,
+            "citations": [
+              {
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "chunk_id": "6bfbbc1b50da-p4-c5-900",
+                "page": 4,
+                "section": "1 The board: application examples and related products",
+                "quote": "pins, 6 analog inputs, USB connections, ICSP header and reset button. This board includes everything you will need for a great first experience with Arduino."
+              }
+            ],
+            "chunks": [
+              {
+                "index": 5,
+                "page": 4,
+                "text": "1 The Board\n1.1 Application Examples\nThe UNO board is the flagship product of Arduino. Regardless if you are new to the world of electronics or will use\nthe UNO R3 as a tool for education purposes or industry-related tasks, the UNO R3 is likely to meet your needs.\nFirst entry to electronics: If this is your first project within coding and electronics, get started with our most used\nand documented board; UNO. It is equipped with the well-known ATmega328P processor, 14 digital input/output\npins, 6 analog inputs, USB connections, ICSP header and reset button. This board includes everything you will need\nfor a great first experience with Arduino.\nIndustry-standard development board: Using the UNO R3 board in industries, there are a range of companies\nusing the UNO R3 board as the brain for their PLC’s.\nEducation purposes: Although the UNO R3 board has been with us for about ten years, it is",
+                "chunk_id": "6bfbbc1b50da-p4-c5-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "1 The board: application examples and related products",
+                "score": 0.81163489818573
+              },
+              {
+                "index": 3,
+                "page": 2,
+                "text": "Features\nATMega328P Processor\nMemory\nAVR CPU at up to 16 MHz\n32 kB Flash\n2 kB SRAM\n1 kB EEPROM\nSecurity\nPower On Reset (POR)\nBrown Out Detection (BOD)\nPeripherals\n2x 8-bit Timer/Counter with a dedicated period register and compare channels\n1x 16-bit Timer/Counter with a dedicated period register, input capture and compare channels\n1x USART with fractional baud rate generator and start-of-frame detection\n1x controller/peripheral Serial Peripheral Interface (SPI)\n1x Dual mode controller/peripheral I2C\n1x Analog Comparator (AC) with a scalable reference input\nWatchdog Timer with separate on-chip oscillator\nSix PWM channels\nInterrupt and wake-up on pin change\nATMega16U2 Processor\n8-bit AVR® RISC-based microcontroller\nMemory\n16 kB ISP Flash\n512B EEPROM\n512B SRAM\ndebugWIRE interface for on-chip debugging and programming\nPower\n2.7-5.5 volts\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p2-c3-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "Features: ATmega328P and ATmega16U2",
+                "score": 0.7869263887405396
+              },
+              {
+                "index": 8,
+                "page": 6,
+                "text": "Board topology\nRef. Description Ref. Description\nX1 Power jack 2.1x5.5mm U1 SPX1117M3-L-5 Regulator\nX2 USB B Connector U3 ATMEGA16U2 Module\nPC1 EEE-1EA470WP 25V SMD CapacitorU5 LMV358LIST-A.9 IC\nPC2 EEE-1EA470WP 25V SMD CapacitorF1 Chip Capacitor, High Density\nD1 CGRA4007-G Rectifier ICSP Pin header connector (through hole 6)\nJ-ZU4 ATMEGA328P Module ICSP1 Pin header connector (through hole 6)\nY1 ECS-160-20-4X-DU Oscillator\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p6-c8-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "3.1 Board topology: component reference table",
+                "score": 0.773774266242981
+              },
+              {
+                "index": 14,
+                "page": 10,
+                "text": "pin 4/GPIO\n6 D5 Digital/GPIO Digital pin 5/GPIO\n7 D6 Digital/GPIO Digital pin 6/GPIO\n8 D7 Digital/GPIO Digital pin 7/GPIO\n9 D8 Digital/GPIO Digital pin 8/GPIO\n10 D9 Digital/GPIO Digital pin 9/GPIO\n11 SS Digital SPI Chip Select\n12 MOSI Digital SPI1 Main Out Secondary In\n13 MISO Digital SPI Main In Secondary Out\n14 SCK Digital SPI serial clock output\n15 GND Power Ground\n16 AREF Digital Analog reference voltage\n17 A4/SD4 Digital Analog input 4/I2C Data line (duplicated)\n18 A5/SD5 Digital Analog input 5/I2C Clock line (duplicated)\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p10-c14-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "5.1 JANALOG and 5.2 JDIGITAL pin tables",
+                "score": 0.7596670389175415
+              },
+              {
+                "index": 6,
+                "page": 4,
+                "text": "the UNO R3 board as the brain for their PLC’s.\nEducation purposes: Although the UNO R3 board has been with us for about ten years, it is still widely used for\nvarious education purposes and scientific projects. The board's high standard and top quality performance makes it\na great resource to capture real time from sensors and to trigger complex laboratory equipment to mention a few\nexamples.\n1.2 Related Products\nArduino Starter Kit\nArduino UNO R4 Minima\nArduino UNO R4 WiFi\nTinkerkit Braccio Robot\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p4-c6-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "1 The board: application examples and related products",
+                "score": 0.7559041976928711
+              }
+            ],
+            "reason": "verified_quotations",
+            "generation_seconds": 33.66864290001104,
+            "raw_model_response": "{\"found\": true, \"selections\": [{\"passage\": \"P1\", \"first_line\": 7, \"last_line\": 8}]}"
+          },
+          "quotation_supported": true,
+          "expected_answer_pass": true
+        },
+        {
+          "id": "A04",
+          "question": "How much Flash memory is listed for the ATmega328P processor?",
+          "answerable": true,
+          "retrieval_hit_at_1": false,
+          "retrieval_hit_at_5": true,
+          "retrieved_pages": [
+            7,
+            2,
+            1,
+            4,
+            5
+          ],
+          "retrieval_seconds": 0.06640519999200478,
+          "answer": {
+            "question": "How much Flash memory is listed for the ATmega328P processor?",
+            "answer": "32 kB Flash 2 kB SRAM",
+            "found": true,
+            "citations": [
+              {
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "chunk_id": "6bfbbc1b50da-p2-c3-900",
+                "page": 2,
+                "section": "Features: ATmega328P and ATmega16U2",
+                "quote": "32 kB Flash 2 kB SRAM"
+              }
+            ],
+            "chunks": [
+              {
+                "index": 9,
+                "page": 7,
+                "text": "3.2 Processor\nThe Main Processor is a ATmega328P running at up to 20 MHz. Most of its pins are connected to the external\nheaders, however some are reserved for internal communication with the USB Bridge coprocessor.\n3.3 Power Tree\nPower tree\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p7-c9-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "3.2 Processor and 3.3 Power tree",
+                "score": 0.6970248818397522
+              },
+              {
+                "index": 3,
+                "page": 2,
+                "text": "Features\nATMega328P Processor\nMemory\nAVR CPU at up to 16 MHz\n32 kB Flash\n2 kB SRAM\n1 kB EEPROM\nSecurity\nPower On Reset (POR)\nBrown Out Detection (BOD)\nPeripherals\n2x 8-bit Timer/Counter with a dedicated period register and compare channels\n1x 16-bit Timer/Counter with a dedicated period register, input capture and compare channels\n1x USART with fractional baud rate generator and start-of-frame detection\n1x controller/peripheral Serial Peripheral Interface (SPI)\n1x Dual mode controller/peripheral I2C\n1x Analog Comparator (AC) with a scalable reference input\nWatchdog Timer with separate on-chip oscillator\nSix PWM channels\nInterrupt and wake-up on pin change\nATMega16U2 Processor\n8-bit AVR® RISC-based microcontroller\nMemory\n16 kB ISP Flash\n512B EEPROM\n512B SRAM\ndebugWIRE interface for on-chip debugging and programming\nPower\n2.7-5.5 volts\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p2-c3-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "Features: ATmega328P and ATmega16U2",
+                "score": 0.6948857307434082
+              },
+              {
+                "index": 1,
+                "page": 1,
+                "text": "User Manual\nSKU: A000066\nEnglish\nDescription\nThe Arduino® UNO R3 is the perfect board to get familiar with electronics and coding. This versatile development\nboard is equipped with the well-known ATmega328P and the ATMega 16U2 Processor.\nThis board will give you a great first experience within the world of Arduino.\nTarget areas:\nMaker, introduction, industries\nProduct Intended Use\nArduino Hardware Products are primarily intended for development and prototyping but may also support\nproduction solutions. Developers must design and verify security controls early, based on the intended deployment\nenvironment. Security is a shared responsibility between Arduino and the solution builder, who must assess the\nhardware’s available security features and add any necessary protections.\nVisit docs.arduino.cc/tutorials/security/intended-use-and-security-model/ for the complete Arduino",
+                "chunk_id": "6bfbbc1b50da-p1-c1-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "Description and intended use",
+                "score": 0.6491358280181885
+              },
+              {
+                "index": 5,
+                "page": 4,
+                "text": "1 The Board\n1.1 Application Examples\nThe UNO board is the flagship product of Arduino. Regardless if you are new to the world of electronics or will use\nthe UNO R3 as a tool for education purposes or industry-related tasks, the UNO R3 is likely to meet your needs.\nFirst entry to electronics: If this is your first project within coding and electronics, get started with our most used\nand documented board; UNO. It is equipped with the well-known ATmega328P processor, 14 digital input/output\npins, 6 analog inputs, USB connections, ICSP header and reset button. This board includes everything you will need\nfor a great first experience with Arduino.\nIndustry-standard development board: Using the UNO R3 board in industries, there are a range of companies\nusing the UNO R3 board as the brain for their PLC’s.\nEducation purposes: Although the UNO R3 board has been with us for about ten years, it is",
+                "chunk_id": "6bfbbc1b50da-p4-c5-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "1 The board: application examples and related products",
+                "score": 0.6086212396621704
+              },
+              {
+                "index": 7,
+                "page": 5,
+                "text": "2 Ratings\n2.1 Recommended Operating Conditions\nSymbol Description Min Max\nConservative thermal limits for the whole board: -40 °C (-40 °F) 85 °C ( 185 °F)\nNOTE: In extreme temperatures, EEPROM, voltage regulator, and the crystal oscillator, might not work as\nexpected.\n2.2 Power Consumption\nSymbol Description Min Typ Max Unit\nVIN DC Barrel Jack Voltage Range 7 - 12 V\nVUSB USB connector Voltage - 5.5 V\nPMax Maximum Power Consumption - - xx mA\nNOTE: The VIN input voltage can get up to 20V, but this is its absolute maximum rating, and we do not\nrecommend to work up to that value.\n3 Functional Overview\n3.1 Board Topology\nTop view\nArduino® UNO R3",
+                "chunk_id": "6bfbbc1b50da-p5-c7-900",
+                "source_id": "arduino-uno-r3-manual-20261119",
+                "section": "2 Ratings: operating conditions and power consumption",
+                "score": 0.5901855230331421
+              }
+            ],
+            "reason": "verified_quotations",
+            "generation_seconds": 34.329110499995295,
+            "raw_model_response": "{\"found\": true, \"selections\": [{\"passage\": \"P2\", \"first_line\": 5, \"last_line\": 6}]}"
+          },
+          "quotation_supported": true,
+          "expected_answer_pass": true
+        }
+      ],
+      "summary": {
+        "answerable_cases": 4,
+        "unanswerable_cases": 0,
+        "hit_at_1": 0.5,
+        "hit_at_5": 1.0,
+        "answered_count": 4,
+        "quotation_groundedness": 1.0,
+        "answerable_pattern_pass": 0.5,
+        "unanswerable_refusal_pass": 0.0,
+        "errors": 0,
+        "failure_ids": [
+          "A01",
+          "A02"
+        ]
+      }
+    }
+  ],
+  "complete": false
+}

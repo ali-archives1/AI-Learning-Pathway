@@ -1,0 +1,16 @@
+{
+  "source": "Fresh source export without a virtual environment or Git metadata; not claimed as a clean Git clone",
+  "unit_test_exit_code": 0,
+  "test_count": 47,
+  "manual_hash_check_exit_code": 0,
+  "manual_hash_check_output": "Verified Arduino UNO R3 manual: 14 pages; SHA-256 matches data/sources.json",
+  "python": "3.12.14",
+  "packages": {
+    "PySide6": "6.10.1",
+    "numpy": "2.3.5",
+    "pypdf": "6.10.0",
+    "reportlab": "4.4.9",
+    "PyInstaller": "6.18.0"
+  },
+  "passed": true
+}
